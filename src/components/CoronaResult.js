@@ -4,7 +4,7 @@ import Autocomplete from '@material-ui/lab/Autocomplete';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import Image from 'material-ui-image';
-import Card from '@material-ui/core/Card';
+
 
 
 var listOfImages = [];
@@ -32,7 +32,7 @@ export default class ComboBox extends Component {
 
   componentWillMount() {
     const regex = /\.(png|jpe?g|svg)$/;
-    const path = require.context('../assets/img/')
+    const path = require.context('../data/img/')
     listOfImages = this.importAll(path, false, regex);
   }
   render() {
