@@ -42,51 +42,35 @@ export default class ComboBox extends Component {
     console.log(states.indexOf(state))
     // console.log(this.state.imageIndex,"imageIndex");
     return (
-      <div>
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          style={{
-            marginTop: "20px"
-          }}
-        >
-          <Typography variant="h5" component="h3">
-          Covid19 Assumption According to State
+      <Grid
+        container
+        direction="column"
+        justify="center"
+        alignItems="center"
+        style={{
+          marginTop: "20px"
+        }}
+      >
+        <Typography variant="h5" component="h1" style = {{padding:"20px"}}>
+          Kalman prediction
               </Typography>
-        </Grid>
 
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          alignItems="center"
-          style={{
-            marginTop: "20px"
-          }}
-        >
-
-          <Autocomplete
-            onChange={this.onTagsChange}
-            id="combo-box-demo"
-            options={states}
-            getOptionLabel={(option) => option}
-            style={{ width: 300, alignContent: "center" }}
-            renderInput={(params) => <TextField {...params} label="State" variant="outlined" />}
-          />
-        </Grid>
-
+        <Autocomplete
+          onChange={this.onTagsChange}
+          id="combo-box-demo"
+          options={states}
+          getOptionLabel={(option) => option}
+          style={{ width: 300}}
+          renderInput={(params) => <TextField {...params} label="State" variant="outlined" />}
+        />
         {this.state.state === "All" ? listOfImages.map(
-          (image, index) => <Image key={index} src={image} alt="info"></Image>
-        ) : <Image
+          (image, index) => <img key={index} src={image} alt="info" style={{ "width": "800px", "maxWidth": '100%', "height": "inherit" }} />
+        ) : <img
             src={listOfImages[states.indexOf(this.state.state)]}
             color="inherit"
-            imageStyle={{ "height": 600 }}
+            style={{ "width": "800px", "maxWidth": '100%', "height": "inherit" ,padding:"20px"}}
           />}
-
-
-      </div>
+      </Grid>
     );
   }
 
