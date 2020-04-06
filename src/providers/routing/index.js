@@ -9,6 +9,7 @@ import Login from '../../screens/Login';
 import FirstLogin from '../../screens/FirstLogin';
 import Register from '../../screens/Register';
 import NotFound from '../../screens/NotFound';
+import CoronaResult from "../../components/CoronaResult";
 
 
 const AppRouter = () => (
@@ -16,7 +17,7 @@ const AppRouter = () => (
     <Switch>
 
       {/* Login Related */}
-      <PublicRoute path="/" component={Login} exact={true} />
+      <PublicRoute path="/" component={CoronaResult} exact={true} />
       <PublicRoute path="/firstLogin" component={FirstLogin} />
 
       {/* Registration page */}

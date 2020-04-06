@@ -11,6 +11,7 @@ module.exports = merge(common, {
     historyApiFallback: true // this prevents the default browser full page refresh on form submission and link change
   },
   plugins:[
-    new webpack.DefinePlugin({ "process.env.API_URL": JSON.stringify("http://localhost:3000/") })
+    new webpack.DefinePlugin({ "process.env.API_URL": JSON.stringify("http://localhost:3000/") }),
+    new webpack.DefinePlugin({ CLIENT_APP_PATH: JSON.stringify('/home/navgurukul/navgurukulPro/shayara-bano/src/assets/img/') })
   ]
 });
